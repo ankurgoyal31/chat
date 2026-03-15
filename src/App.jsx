@@ -19,7 +19,7 @@ const page = () => {
     set(true);
     setfirst([...first,{ u:inp,a:"thinking...."}]); 
         try{
- const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/ask`, {
+ const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/chat/ask`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({inp})
@@ -50,7 +50,7 @@ const page = () => {
     }
   }, [inp]);
   useEffect(() => {
-  fetch(`${import.meta.env.VITE_BACKEND_URL}/clear`, {
+  fetch(`${import.meta.env.VITE_BACKEND_URL}/chat/clear`, {
     method: "DELETE"
   });
 }, []);
